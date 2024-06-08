@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Doument extends Model
 {
     use HasFactory;
+
+    
 }
