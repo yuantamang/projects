@@ -31,6 +31,7 @@ class PostPhotoResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
                     ->image()
+                    ->multiple()
                     ->required(),
                 Forms\Components\TextInput::make('wedding_id')
                     ->required()

@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\WeddingResource\Pages;
 use App\Filament\Resources\WeddingResource\RelationManagers;
+use App\Filament\Resources\WeddingResource\RelationManagers\PostPhotosRelationManager;
 use App\Models\Wedding;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -31,6 +32,7 @@ class WeddingResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
                     ->image()
+                    ->multiple()
                     ->required(),
             ]);
     }
@@ -70,7 +72,7 @@ class WeddingResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PostPhotosRelationManager::class
         ];
     }
 

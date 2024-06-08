@@ -34,6 +34,7 @@ class LandscapeResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
+                    ->multiple()
                     ->required(),
             ]);
     }

@@ -9,5 +9,7 @@ class Doument extends Model
 {
     use HasFactory;
 
-    
+    protected $casts = [
+        'images' => 'array',
+    ];
 }
