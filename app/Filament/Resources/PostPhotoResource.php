@@ -17,7 +17,8 @@ class PostPhotoResource extends Resource
 {
     protected static ?string $model = PostPhoto::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-folder-plus';
+    protected static ?string $navigationGroup = "Wed";
 
     public static function form(Form $form): Form
     {

@@ -17,7 +17,9 @@ class LandscapeResource extends Resource
 {
     protected static ?string $model = Landscape::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-globe-asia-australia';
+    protected static ?string $navigationGroup = "Events";
+
 
     public static function form(Form $form): Form
     {
