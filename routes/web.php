@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -7,3 +8,8 @@ Route::get('/', function () {
 });
 Route::view('/about', 'About');
 Route::view('/Dashboard', 'DashBoard');
+Route::get('/Contact', function () {
+    return view("Contact");
+});
+Route::resource('customer',CustomerController::class)->names('customer');
+Route::get('/viewing', [CustomerController::class,'index'])->name('View');
