@@ -8,6 +8,7 @@ use App\Models\Landscape;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -70,6 +71,7 @@ class LandscapeResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+                ExportBulkAction::make()
             ]);
     }
 

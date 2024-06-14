@@ -6,6 +6,7 @@ use App\Filament\Resources\PostPhotoResource\Pages;
 use App\Filament\Resources\PostPhotoResource\RelationManagers;
 use App\Models\PostPhoto;
 use Filament\Forms;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -72,6 +73,7 @@ class PostPhotoResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+                ExportBulkAction::make()
             ]);
     }
 

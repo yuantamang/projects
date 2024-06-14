@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\WeddingResource\Pages;
 use App\Filament\Resources\WeddingResource\RelationManagers;
 use App\Filament\Resources\WeddingResource\RelationManagers\PostPhotosRelationManager;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use App\Models\Wedding;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -67,7 +68,9 @@ class WeddingResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+                ExportBulkAction::make()
             ]);
+
     }
 
     public static function getRelations(): array

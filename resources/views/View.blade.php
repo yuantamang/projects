@@ -19,5 +19,5 @@
 
     <x-slider>
     </x-slider>
-    
+
 </x-page-layout>
