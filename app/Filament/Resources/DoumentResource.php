@@ -19,6 +19,7 @@ class DoumentResource extends Resource
     protected static ?string $model = Doument::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
+    protected static ?string $navigationGroup = "Files";
 
     public static function form(Form $form): Form
     {
