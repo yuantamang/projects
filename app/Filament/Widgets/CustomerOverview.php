@@ -2,17 +2,17 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Landscape;
+use App\Models\Customer;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
-class LandOverview extends BaseWidget
+class CustomerOverview extends BaseWidget
 {
     protected function getStats(): array
     {
-        $totalLand =Landscape::count();
+        $totalCustomer =Customer::count();
         return [
-            stat::make("Total Landscape photos",$totalLand)
+            stat::make("Total Numbers of Customers",$totalCustomer)
         ];
     }
 }
