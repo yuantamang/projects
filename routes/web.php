@@ -4,8 +4,8 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\WeddingController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [WeddingController::class,"home"])->name("welcome");
-Route::resource('wedding',WeddingController::class)->names('wedding');
+Route::view('/', 'welcome');
+
 
 Route::view('/about', 'About');
 Route::view('/Dashboard', 'DashBoard');
