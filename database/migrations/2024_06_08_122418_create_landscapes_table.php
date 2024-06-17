@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('landscapes', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->string("name");
-            $table->longText("description");
-            $table->string("image");
+            $table->string("title")->nullable();
+            $table->string("name")->nullable();
+            $table->longText("description")->nullable();
+            $table->string("image")->nullable();
             $table->timestamps();
         });
     }

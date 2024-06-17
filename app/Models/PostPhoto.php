@@ -10,15 +10,6 @@ class PostPhoto extends Model
 {
     use HasFactory;
 
-    /**
-     * Get the PostPhoto that owns the PostPhoto
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function wedding(): BelongsTo
-    {
-        return $this->belongsTo(Wedding::class);
-    }
 
     protected $casts = [
         'images' => 'array',

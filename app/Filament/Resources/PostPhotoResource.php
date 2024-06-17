@@ -6,7 +6,6 @@ use App\Filament\Resources\PostPhotoResource\Pages;
 use App\Filament\Resources\PostPhotoResource\RelationManagers;
 use App\Models\PostPhoto;
 use Filament\Forms;
-use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -19,7 +18,7 @@ class PostPhotoResource extends Resource
     protected static ?string $model = PostPhoto::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-folder-plus';
-    protected static ?string $navigationGroup = "Wed";
+    protected static ?string $navigationGroup = "Wedding";
 
     public static function form(Form $form): Form
     {
@@ -32,12 +31,7 @@ class PostPhotoResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->multiple()
-                    ->required(),
-                Forms\Components\TextInput::make('wedding_id')
-                    ->required()
-                    ->numeric(),
+                    ->image(),
             ]);
     }
 
@@ -50,9 +44,6 @@ class PostPhotoResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('wedding_id')
-                    ->numeric()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -73,7 +64,6 @@ class PostPhotoResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-                ExportBulkAction::make()
             ]);
     }
 

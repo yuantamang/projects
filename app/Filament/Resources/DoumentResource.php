@@ -7,7 +7,6 @@ use App\Filament\Resources\DoumentResource\RelationManagers;
 use App\Models\Doument;
 use Filament\Forms;
 use Filament\Forms\Form;
-use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -19,7 +18,7 @@ class DoumentResource extends Resource
     protected static ?string $model = Doument::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
-    protected static ?string $navigationGroup = "Files";
+    protected static ?string $navigationGroup = "World Wide";
 
     public static function form(Form $form): Form
     {
@@ -31,13 +30,11 @@ class DoumentResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\RichEditor::make('description')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->multiple()
-                    ->required(),
+                    ->image(),
             ]);
     }
 
@@ -70,7 +67,6 @@ class DoumentResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-                ExportBulkAction::make()
             ]);
     }
 

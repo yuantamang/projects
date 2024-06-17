@@ -8,7 +8,6 @@ use App\Models\Landscape;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -18,27 +17,23 @@ class LandscapeResource extends Resource
 {
     protected static ?string $model = Landscape::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-globe-asia-australia';
-    protected static ?string $navigationGroup = "Events";
-
+    protected static ?string $navigationIcon = 'heroicon-o-globe-alt';
+    protected static ?string $navigationGroup = "World Wide";
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->default(null),
                 Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('description')
-                    ->required()
+                    ->maxLength(255)
+                    ->default(null),
+                Forms\Components\RichEditor::make('description')
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->multiple()
-                    ->required(),
+                    ->image(),
             ]);
     }
 
@@ -71,7 +66,6 @@ class LandscapeResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-                ExportBulkAction::make()
             ]);
     }
 

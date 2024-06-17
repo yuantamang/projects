@@ -4,8 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\WeddingResource\Pages;
 use App\Filament\Resources\WeddingResource\RelationManagers;
-use App\Filament\Resources\WeddingResource\RelationManagers\PostPhotosRelationManager;
-use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use App\Models\Wedding;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -20,7 +18,7 @@ class WeddingResource extends Resource
     protected static ?string $model = Wedding::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-folder';
-    protected static ?string $navigationGroup = "Wed";
+    protected static ?string $navigationGroup = "Wedding";
 
     public static function form(Form $form): Form
     {
@@ -33,9 +31,7 @@ class WeddingResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->multiple()
-                    ->required(),
+                    ->image(),
             ]);
     }
 
@@ -68,15 +64,13 @@ class WeddingResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-                ExportBulkAction::make()
             ]);
-
     }
 
     public static function getRelations(): array
     {
         return [
-            PostPhotosRelationManager::class
+            //
         ];
     }
 

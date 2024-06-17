@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("names");
             $table->string("title");
-            $table->string("image");
-            $table->foreignId("wedding_id")->constrained()->cascadeOnDelete();
+            $table->string("image")->nullable();
             $table->timestamps();
         });
     }
