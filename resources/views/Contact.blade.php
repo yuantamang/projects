@@ -1,96 +1,62 @@
 <x-page-layout>
 
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg m-6 hover:shadow-xl">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
-                    Product name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Color
-                </th>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
-                    Category
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Price
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Magic Mouse 2
-                </th>
-                <td class="px-6 py-4">
-                    Black
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Accessories
-                </td>
-                <td class="px-6 py-4">
-                    $99
-                </td>
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Google Pixel Phone
-                </th>
-                <td class="px-6 py-4">
-                    Gray
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Phone
-                </td>
-                <td class="px-6 py-4">
-                    $799
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Apple Watch 5
-                </th>
-                <td class="px-6 py-4">
-                    Red
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Wearables
-                </td>
-                <td class="px-6 py-4">
-                    $999
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="relative overflow-x-auto border-2 border-solid rounded-xl hover:shadow-xl m-9">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Follow us
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Link
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Contact
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <a href="http://www.facebook.com/people/Professional-PHOTO-VIDEO-Graphy/100063892897090/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </th>
+
+                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <a href="https://www.facebook.com/people/Professional-PHOTO-VIDEO-Graphy/100063892897090/?sk=photos" target="_blank" rel="noopener noreferrer">See the best Photos</a>
+                    </th>
+
+                    <td class="px-6 py-4">
+                        <a href="" target="_blank" rel="noopener noreferrer">Messanger</a>
+                    </td>
+                </tr>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                   <td class="px-6 py-4">
+                        <a href="http://www.youtube.com/@professionalphotovideograp8594/featured" target="_blank" rel="noopener noreferrer">Youtube</a>
+                    </td>
+
+                    <td class="px-6 py-4">
+                        <a href="https://www.youtube.com/watch?v=QPwI3jXS4vY" target="_blank" rel="noopener noreferrer">See the best Video</a>
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href="tel:9813361928">9813361928</a>
+                    </td>
+
+                </tr>
+                <tr class="bg-white dark:bg-gray-800">
+
+                    <td class="px-6 py-4">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Whatapps</a>
+                    </td>
+
+
+
+                    <td class="px-6 py-4">
+                        <a href="" target="_blank" rel="noopener noreferrer">Talk to book the date</a>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </x-page-layout>

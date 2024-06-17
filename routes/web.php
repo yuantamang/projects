@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\WeddingController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WeddingController::class,"home"])->name("welcome");
+Route::resource('wedding',WeddingController::class)->names('wedding');
+
 Route::view('/about', 'About');
 Route::view('/Dashboard', 'DashBoard');
 Route::get('/Contact', function () {
@@ -13,3 +14,4 @@ Route::get('/Contact', function () {
 });
 Route::resource('customer',CustomerController::class)->names('customer');
 Route::get('/viewing', [CustomerController::class,'index'])->name('View');
+

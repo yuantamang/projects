@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Wedding;
 use Illuminate\Http\Request;
 
 class WeddingController extends Controller
@@ -9,9 +10,12 @@ class WeddingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+     function home()
     {
-        //
+        $weddings =Wedding::all();
+        return [
+            view("welcome",compact("weddings"))
+        ];
     }
 
     /**
