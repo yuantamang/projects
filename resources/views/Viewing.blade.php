@@ -1,6 +1,7 @@
 <x-page-layout>
 
-    <main>
+    <div>
+
         <div class="grid md:grid-cols-4 gap-2.5 py-10 bg-gray-500 m-6 p-3 rounded-3xl hover:shadow-2xl">
             @foreach ($customers as $customer)
             <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700 hover:shadow-2xl">
@@ -15,9 +16,10 @@
         </div>
             @endforeach
         </div>
-    </main>
 
-    <x-slider>
-    </x-slider>
+        <x-slider>
+        </x-slider>
+
+    </div>
 
 </x-page-layout>

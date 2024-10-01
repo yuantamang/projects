@@ -31,7 +31,8 @@ class WeddingResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->multiple(),
             ]);
     }
 
@@ -43,7 +44,9 @@ class WeddingResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image')
+                    ->circular()
+                    ->stacked(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

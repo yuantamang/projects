@@ -33,7 +33,8 @@ class LandscapeResource extends Resource
                 Forms\Components\RichEditor::make('description')
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->multiple(),
             ]);
     }
 
@@ -45,7 +46,8 @@ class LandscapeResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image')
+                    ->circular(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\PostPhoto;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $customers = Customer::orderBy('id','desc')->get();
-
-        return view('View',compact('customers'));
+        $PostPhotos =PostPhoto::all();
+        return view('PostPhoto',compact('PostPhotos'));
     }
 
     /**
@@ -30,18 +29,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=>'required',
-            'phone'=>'required',
-            'description'=>'required',
-        ]);
-
-        Customer::create([
-            'name' =>$request->name,
-            'phone' =>$request->phone,
-            'description' =>$request->description,
-        ]);
-        return redirect()->back();
+        //
     }
 
     /**

@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\Wedding;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class WedController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $customers = Customer::orderBy('id','desc')->get();
-
-        return view('View',compact('customers'));
+        $weddingPts =Wedding::all();
+        return view("Wedding",compact('weddingPts'));
     }
 
     /**
@@ -30,18 +29,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=>'required',
-            'phone'=>'required',
-            'description'=>'required',
-        ]);
-
-        Customer::create([
-            'name' =>$request->name,
-            'phone' =>$request->phone,
-            'description' =>$request->description,
-        ]);
-        return redirect()->back();
+        //
     }
 
     /**
